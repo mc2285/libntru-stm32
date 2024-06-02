@@ -15,7 +15,6 @@
 */
 
 #include <stdint.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "NTT.h"
@@ -141,11 +140,12 @@ int64_t InvMod(int64_t a, int64_t n)
    int64_t *ptr;
 
    ptr = extendedEuclid (a,n);
-   if (ptr[0]!=1 && ptr[0]!=-1)
+   
+   /* if (ptr[0]!=1 && ptr[0]!=-1)
    {
        printf("%ld, %ld\n", a, n);
        printf("InvMod error\n");
-   }
+   } */
 
    if (ptr[0] == -1)
        ptr[1] = -ptr[1];

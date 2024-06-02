@@ -8,8 +8,6 @@
 #ifndef rng_h
 #define rng_h
 
-#include <stdio.h>
-
 #define RNG_SUCCESS      0
 #define RNG_BAD_MAXLEN  -1
 #define RNG_BAD_OUTBUF  -2

@@ -16,6 +16,8 @@
 #include <stdint.h>
 #include <stdlib.h>
 
+#include "poly.h"
+
 /* compute the maximum norm of a degree N polynomial f */
 int64_t max_norm(const int64_t *f, const int16_t N)
 {
@@ -26,19 +28,6 @@ int64_t max_norm(const int64_t *f, const int16_t N)
     {
         if (abs(f[i])>norm)
             norm = abs(f[i]);
-    }
-    return norm;
-}
-
-/* return the square of the l2 norm */
-int64_t l2_norm(const int64_t *f, const int16_t N)
-{
-    int16_t i;
-    int64_t norm = 0;
-
-    for (i=0;i<N;i++)
-    {
-        norm += f[i]*f[i];
     }
     return norm;
 }

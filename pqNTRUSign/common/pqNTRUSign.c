@@ -14,7 +14,6 @@
  *  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
 #include <math.h>
@@ -307,7 +306,6 @@ int sign(
                 printf("%d, ", g[i]);
             printf("\n"); */
 
-            printf("signature failed\n");
             return -1;
         }
         counter = counter+1;
@@ -422,7 +420,6 @@ int verify(
         /* check if |s| is smaller than sigma*11 */
         if (max_norm(sig, param->N)>param->stdev*11)
         {
-            printf("max norm failed\n");
             return -1;
         }
     }
@@ -431,7 +428,6 @@ int verify(
         /* check if |s| is smaller than norm_bound_t */
         if (max_norm(sig, param->N)>param->norm_bound_s)
         {
-            printf("max norm failed\n");
             return -1;
         }
     }
@@ -449,6 +445,7 @@ int verify(
     {
         if ((v[i]-sptp[i+param->N]) % param->p != 0)
         {
+            /* 
             printf("congruent condition failed for param %s \nv:\n", param->name);
 
             printf("sig:\n");
@@ -467,6 +464,7 @@ int verify(
             for (i=0;i<param->padded_N;i++)
                 printf("%lld, ", (long long) sptp[i+param->N]);
             printf("\n\n");
+            */
 
             return -1;
         }

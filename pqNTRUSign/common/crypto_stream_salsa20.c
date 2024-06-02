@@ -4,6 +4,8 @@ D. J. Bernstein
 Public domain.
 */
 
+#include "crypto_stream_salsa20.h"
+
 #define ROUNDS 20
 
 typedef unsigned int uint32;

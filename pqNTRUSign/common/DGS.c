@@ -20,6 +20,8 @@
 #include "fastrandombytes.h"
 #include "crypto_hash_sha512.h"
 
+#include "poly.h"
+
 
 /*
  * Discrete Gaussian sampler using Box-Muller method

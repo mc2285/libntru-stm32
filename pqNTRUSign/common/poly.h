@@ -74,9 +74,6 @@ void Inv_NTT(
           int64_t       *f,
     const int64_t       *f_ntt);
 
-/* maximum norm */
-int64_t
-max_norm(const int64_t *f, const int16_t N);
 
 /* polynomial multiplicaitons with karatsuba */
 void
