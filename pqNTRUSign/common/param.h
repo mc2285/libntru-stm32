@@ -35,6 +35,7 @@ enum _PQ_PARAM_SET_ID {
     Uniform_1024_205,
 };
 
+typedef enum _PQ_PARAM_SET_ID PQ_PARAM_SET_ID;
 
 struct _PQ_PARAM_SET {
     PQ_PARAM_SET_ID  id;          /* parameter set id */
@@ -61,7 +62,6 @@ struct _PQ_PARAM_SET {
     int64_t          inv_N;
 };
 
-typedef enum _PQ_PARAM_SET_ID PQ_PARAM_SET_ID;
 typedef const struct _PQ_PARAM_SET  PQ_PARAM_SET;
 
 PQ_PARAM_SET *
