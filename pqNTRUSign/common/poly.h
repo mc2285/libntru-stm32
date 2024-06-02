@@ -17,6 +17,7 @@
 #ifndef POLY_POLY_H_
 #define POLY_POLY_H_
 
+#include "param.h"
 
 /*
  * generate a degree N-1 trinary polynomial with

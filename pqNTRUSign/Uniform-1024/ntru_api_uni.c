@@ -92,8 +92,6 @@ int crypto_sign(
     /* memory allocations */
     /* int64_t         *mem, *buf; */
     int64_t         *f, *g, *g_inv, *h, *sig;
-    int             counter;
-    uint64_t        temp;
 
     /* 
     buf = malloc(sizeof(int64_t)*param->padded_N*11);
@@ -122,7 +120,7 @@ int crypto_sign(
      * signing the message, return the number of
      * rejections
      */
-    counter = sign(sig, m,mlen, f,g,g_inv,h, UNIFORM_BUF,param);
+    sign(sig, m,mlen, f,g,g_inv,h, UNIFORM_BUF,param);
 
     memcpy(sm, m, mlen);
 

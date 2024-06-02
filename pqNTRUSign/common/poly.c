@@ -97,7 +97,7 @@ pol_gen_flat(
         _pol_gen_flat(ai,N,d);
     }while (is_balance(ai,N)==0);
     
-    int i;
+//    int i;
 //    for (i=0;i<N;i++)
 //    printf("%03d, ",ai[i]);
 //    printf("\n");
