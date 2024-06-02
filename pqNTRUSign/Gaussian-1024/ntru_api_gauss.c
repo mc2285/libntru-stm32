@@ -11,7 +11,7 @@
 #include <string.h>
 #include "../common/pqNTRUSign.h"
 #include "../common/param.h"
-#include "api.h"
+#include "ntru_api_gauss.h"
 #include "../common/crypto_hash_sha512.h"
 #include "../common/packing.h"
 
