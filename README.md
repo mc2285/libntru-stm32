@@ -1,7 +1,7 @@
-## libntru-stm32
+# libntru-stm32
 
-This library is a port of the official [libntru](https://github.com/jschanck/ntru) code
-intended to be used on STM32 microcontrollers.
+This library is an STM32 port of the official [pqntrusign](https://github.com/zhenfeizhang/pqntrusign-nist-submission) code
+submitted to NIST.
 
 By porting I mean here removing everything but the core NTRU encryption and decryption functions and using
 STM32H7 hardware cryptographic peripherals wherever possible and practical.
