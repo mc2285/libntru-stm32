@@ -21,8 +21,6 @@
 
 #define LENGTH_OF_HASH 64
 #define HASH_BYTES LENGTH_OF_HASH
-typedef enum _PQ_PARAM_SET_ID PQ_PARAM_SET_ID;
-typedef const struct _PQ_PARAM_SET  PQ_PARAM_SET;
 
 
 #define NTRU_PADDED_N 1024 /* same for all parameter sets */
@@ -62,6 +60,9 @@ struct _PQ_PARAM_SET {
     int64_t          *inv_roots;
     int64_t          inv_N;
 };
+
+typedef enum _PQ_PARAM_SET_ID PQ_PARAM_SET_ID;
+typedef const struct _PQ_PARAM_SET  PQ_PARAM_SET;
 
 PQ_PARAM_SET *
 pq_get_param_set_by_id(PQ_PARAM_SET_ID id);

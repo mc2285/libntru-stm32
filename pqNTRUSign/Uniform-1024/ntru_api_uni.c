@@ -15,7 +15,7 @@
 #include "../common/crypto_hash_sha512.h"
 #include "../common/packing.h"
 
-static int64_t UNIFORM_BUF[NTRU_PADDED_N*11], UNIFORM_MEM[NTRU_PADDED_N*11];
+__attribute__((section("._ram_d2"))) static int64_t UNIFORM_BUF[NTRU_PADDED_N*11], UNIFORM_MEM[NTRU_PADDED_N*11];
 
 /*  generate a pair of keys */
 int crypto_sign_keypair(

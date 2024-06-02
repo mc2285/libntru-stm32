@@ -55,7 +55,7 @@ int64_t normf(
     int64_t norm;
     int16_t i,j;
     
-    static int64_t buf[NTRU_PADDED_N*3];
+    __attribute__((section("._ram_d2"))) static int64_t buf[NTRU_PADDED_N*3];
 
     rotate_f    = buf;
     sum         = rotate_f + param->padded_N;

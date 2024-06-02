@@ -244,10 +244,13 @@ pol_inv_mod2(
   uint8_t *c = b + (N+1);
   uint8_t *poltmp;
 
+  /* 
   if(!scratch)
   {
     return -1;
   }
+  */
+ 
   memset(scratch, 0, scratch_len);
 
   /* f = a (mod 2)*/
