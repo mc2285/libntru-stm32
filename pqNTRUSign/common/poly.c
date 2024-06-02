@@ -17,7 +17,6 @@
 #include <stdint.h>
 #include <string.h>
 #include "fastrandombytes.h"
-#include "shred.h"
 #include "crypto_hash_sha512.h"
 #include "param.h"
 
@@ -235,7 +234,9 @@ pol_inv_mod2(
   uint16_t degtmp;
 
   uint16_t scratch_len = 4*(N+1);
-  uint8_t *scratch = malloc(scratch_len);
+
+  /* uint8_t *scratch = malloc(scratch_len); */
+  static uint8_t scratch[4*(NTRU_PADDED_N+1)];
 
   uint8_t *f = scratch;
   uint8_t *g = f + (N+1);
@@ -276,7 +277,7 @@ pol_inv_mod2(
     for (m = 0; (m <= degf) && (f[m] == 0); ++m);
     if (m > degf)
     {
-      free(scratch);
+      /* free(scratch); */
       return -1;
     }
     if(m > 0) {
@@ -360,8 +361,10 @@ pol_inv_mod2(
     a_inv[m++] = (int64_t)(b[i]);
   }
 
-  shred(scratch, scratch_len);
-  free(scratch);
+  /* shred(scratch, scratch_len); */
+  memset(scratch, 0, scratch_len);
+
+  /* free(scratch); */
 
   return 0;
 }

@@ -51,12 +51,12 @@ int64_t normf(
     const   int64_t   *f,
     const   PQ_PARAM_SET*param)
 {
-    int64_t *buf;
     int64_t *rotate_f;
     int64_t *sum;
     int64_t norm;
     int16_t i,j;
-    buf = malloc(sizeof(int64_t)*param->padded_N*3);
+    
+    static int64_t buf[NTRU_PADDED_N*3];
 
     rotate_f    = buf;
     sum         = rotate_f + param->padded_N;
@@ -75,7 +75,9 @@ int64_t normf(
         if (norm < abs(sum[i]))
             norm = abs(sum[i]);
     }
-    free(buf);
+
+    /* free(buf); */
+
     return norm;
 
 }

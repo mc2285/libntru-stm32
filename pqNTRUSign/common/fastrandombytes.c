@@ -21,10 +21,10 @@
 
 #include <stdlib.h>
 #include <stdint.h>
+#include <string.h>
 
 #include "crypto_stream_salsa20.h"
 #include "rng.h"
-#include "shred.h"
 
 #define RAND_LEN_BYTES (4096)
 
@@ -66,9 +66,16 @@ void rng_cleanup()
   if(init)
   {
     init = 0;
+    
+    /* 
     shred(key, crypto_stream_salsa20_KEYBYTES);
     shred(nonce, crypto_stream_salsa20_KEYBYTES);
     shred(randpool, crypto_stream_salsa20_KEYBYTES);
+    */
+
+    memset(key, 0, crypto_stream_salsa20_KEYBYTES);
+    memset(nonce, 0, crypto_stream_salsa20_NONCEBYTES);
+    memset(randpool, 0, RAND_LEN_BYTES);
   }
 }
 
