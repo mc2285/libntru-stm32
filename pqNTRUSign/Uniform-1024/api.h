@@ -8,7 +8,7 @@
 #ifndef API_H_
 #define API_H_
 
-#define CRYPTO_ALGNAME "Uniform1024"
+#define CRYPTO_ALGNAME "NTRU-Uniform1024"
 #define TEST_PARAM_SET  Uniform_1024_205
 #define CRYPTO_SECRETKEYBYTES 2604
 #define CRYPTO_PUBLICKEYBYTES 2065
