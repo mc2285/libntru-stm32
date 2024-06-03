@@ -47,7 +47,7 @@ fastrandombytes(unsigned char *r, unsigned long long rlen)
   uint8_t i;
   if(!init)
   {
-    randombytes(key, crypto_stream_salsa20_KEYBYTES);
+    _32_randombytes(key);
     init = 1;
   }
   crypto_stream_salsa20(r,rlen,nonce,key);

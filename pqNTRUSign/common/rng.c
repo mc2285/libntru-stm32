@@ -8,10 +8,11 @@
 #include <string.h>
 #include "rng.h"
 
-int
-randombytes(unsigned char *x, unsigned long long xlen)
+#include "crypto_stream_salsa20.h"
+
+int _32_randombytes(unsigned char *x)
 {
-    memcpy(x, "TODO: Implement randombytes() with HAL_RNG from STM32Cube", xlen);
+    memcpy(x, hal_sourced_random_seed, crypto_stream_salsa20_KEYBYTES);
     
     return RNG_SUCCESS;
 }

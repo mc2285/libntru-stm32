@@ -13,7 +13,11 @@
 #define RNG_BAD_OUTBUF  -2
 #define RNG_BAD_REQ_LEN -3
 
+#include "crypto_stream_salsa20.h"
+
+extern char hal_sourced_random_seed[crypto_stream_salsa20_KEYBYTES];
+
 int
-randombytes(unsigned char *x, unsigned long long xlen);
+_32_randombytes(unsigned char *x);
 
 #endif /* rng_h */

@@ -55,7 +55,7 @@ int64_t normf(
     int64_t norm;
     int16_t i,j;
     
-    __attribute__((section("._ram_d2"))) static int64_t buf[NTRU_PADDED_N*3];
+    __attribute__((section("._ram_d1"))) static int64_t buf[NTRU_PADDED_N*3];
 
     rotate_f    = buf;
     sum         = rotate_f + param->padded_N;
@@ -275,7 +275,7 @@ int sign(
     int64_t *b      = a      +  param->padded_N;
     int64_t *buffer = b      +  param->padded_N;    /* 3 polynomials */
     int64_t *sptp   = buffer +  param->padded_N*3;  /* 2 polynomials */
-    int     bit     = 0;    /* flip a bit for bimodal Gaussian */
+    uint16_t     bit     = 0;    /* flip a bit for bimodal Gaussian */
     int     counter = 0;    /* number of samples to get a signature */
 
     int a1,a2,a3;
@@ -317,7 +317,8 @@ int sign(
             DGS(r, param->N, param->stdev);
 
             /* flipping bit for bimodal Gaussian */
-            bit = rand()%2;
+            rng_uint16(&bit);
+            bit %= 2;
             if (bit==0)
                 bit = -1;
         }
