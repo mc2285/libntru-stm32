@@ -115,22 +115,21 @@ void Inv_NTT(
 static
 int64_t* extendedEuclid (int64_t a, int64_t b){
 
-    int64_t array[3];
-    int64_t *dxy = array;
+    static int64_t array[3];
     if (b ==0){
-        dxy[0] =a; dxy[1] =1; dxy[2] =0;
+        array[0] =a; array[1] =1; array[2] =0;
 
-        return dxy;
+        return array;
     }
     else{
         int64_t t, t2;
-        dxy = extendedEuclid(b, (a %b));
-        t =dxy[1];
-        t2 =dxy[2];
-        dxy[1] =dxy[2];
-        dxy[2] = t - a/b *t2;
+        extendedEuclid(b, (a %b));
+        t =array[1];
+        t2 =array[2];
+        array[1] =array[2];
+        array[2] = t - a/b *t2;
 
-        return dxy;
+        return array;
     }
 }
 
