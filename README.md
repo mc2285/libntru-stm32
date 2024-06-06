@@ -5,3 +5,5 @@ submitted to NIST.
 
 By porting I mean here removing everything but the core signature generation and verification code, and adapting it to
 STM32H7 hardware cryptographic peripherals wherever possible and practical.
+
+Also added the [falcon](https://falcon-sign.info/) NIST submission Cortex M4 optimised code for comparison.
