@@ -57,8 +57,8 @@ struct _PQ_PARAM_SET {
     uint16_t         stdev;
 
     /* NTT param */
-    int64_t          *roots;
-    int64_t          *inv_roots;
+    const int64_t          *roots;
+    const int64_t          *inv_roots;
     int64_t          inv_N;
 };
 
