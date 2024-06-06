@@ -265,6 +265,8 @@ int unpack_public_key(
     int64_t  *h)
 {
     param = pq_get_param_set_by_id(blob[0]);
+    if (param == NULL)
+        return -1;
     string_to_rndpoly (param->N, h, blob+1);
     return 0;
 }

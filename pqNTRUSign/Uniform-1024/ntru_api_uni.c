@@ -185,7 +185,10 @@ int crypto_sign_open(
     *mlen = smlen-CRYPTO_BYTES;
     memcpy(m, sm, *mlen);
 
-    unpack_public_key(sm+(*mlen), param,  sig);
+    if (unpack_public_key(sm+(*mlen), param,  sig)!=0)
+    {
+        return -1;
+    }
 
     /* 
     memset(buf,0, sizeof(int64_t)*param->padded_N*7);
