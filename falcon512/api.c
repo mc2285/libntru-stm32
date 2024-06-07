@@ -19,7 +19,7 @@
  * crypto_sign_open() functions not reentrant and not thread-safe, so
  * this should be done only for testing purposes.
  */
-#define TEMPALLOC   static
+#define TEMPALLOC __attribute__((section("._ram_d1"))) static
 
 void randombytes_init(unsigned char *entropy_input,
 	unsigned char *personalization_string,
